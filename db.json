@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "text": "Watch JS course about async & await",
+      "day": "May 16th at 20:00",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Buy groceries ",
+      "day": "May 16th at 21:00",
+      "reminder": false,
+      "id": 5
+    },
+    {
+      "text": "Come up with the idea of application to build using React",
+      "day": "Monday",
+      "reminder": true,
+      "id": 6
+    }
+  ]
+}
