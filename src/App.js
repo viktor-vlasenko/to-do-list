@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from "./components/Header";
+import Login from "./components/Login";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
@@ -8,9 +9,13 @@ import About from "./components/About";
 
 
 const App = () => {
+  const [isSignedIn, setIsSignedIn] = useState(false)
   const [showAddTask, setShowAddTask] = useState(false)
-
   const [tasks, setTasks] = useState([])
+
+  const onSignIn = () => {
+    setIsSignedIn(true)
+  }
 
   useEffect(() => {
     const getTasks = async () => {
@@ -75,17 +80,20 @@ const App = () => {
       <div className="container">
         <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
         <Routes>
-          <Route path='/' exact element={
-            <>
-              {showAddTask && <AddTask onAdd={addTask} />}
-              {tasks.length > 0 ? (
-                <Tasks tasks={tasks} onDelete={deleteTask} toggleReminder={toggleReminder} />
-              ) : (
-                'Nope... No tasks'
-              )}
-            </>
-          } />
+          {!isSignedIn && <Route path='/' element={<Login onSignIn={ onSignIn } />} />}
+          {isSignedIn &&
+            <Route path='/' exact element={
+              <>
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {tasks.length > 0 ? (
+                  <Tasks tasks={tasks} onDelete={deleteTask} toggleReminder={toggleReminder} />
+                ) : (
+                  'Nope... No tasks'
+                )}
+              </>
+            } />}
           <Route path='/about' element={<About />} />
+
         </Routes>
         <Footer />
       </div>

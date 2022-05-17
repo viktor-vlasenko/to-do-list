@@ -1,22 +1,40 @@
 {
   "tasks": [
     {
-      "text": "Watch JS course about async & await",
-      "day": "May 16th at 20:00",
-      "reminder": true,
-      "id": 4
-    },
-    {
-      "text": "Buy groceries ",
-      "day": "May 16th at 21:00",
-      "reminder": false,
-      "id": 5
-    },
-    {
       "text": "Come up with the idea of application to build using React",
-      "day": "Monday",
+      "day": "Thursday",
       "reminder": true,
       "id": 6
+    },
+    {
+      "text": "Connect users with tasks. Display only current user's tasks",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "Add Register component",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 8
+    },
+    {
+      "text": "Add validation for email and password",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "email1@example.com",
+      "password": "Password1"
+    },
+    {
+      "id": 2,
+      "email": "email2@example.com",
+      "password": "Password2"
     }
   ]
 }
