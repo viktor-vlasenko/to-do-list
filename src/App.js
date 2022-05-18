@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from "./components/Header";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
@@ -15,6 +16,19 @@ const App = () => {
 
   const onSignIn = () => {
     setIsSignedIn(true)
+  }
+
+  const onSignUp = async (user) => {
+    const res = await fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'Content-type': "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+    const data = await res.json()
+    onSignIn();
+    alert(`Welcome ${data.name}!`);
   }
 
   useEffect(() => {
@@ -80,7 +94,8 @@ const App = () => {
       <div className="container">
         <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
         <Routes>
-          {!isSignedIn && <Route path='/' element={<Login onSignIn={ onSignIn } />} />}
+          {!isSignedIn && <Route path='/' element={<Login onSignIn={onSignIn} />} />}
+          <Route path='/register' element={<Register onSignUp={onSignUp} />} />
           {isSignedIn &&
             <Route path='/' exact element={
               <>

@@ -13,28 +13,78 @@
       "id": 7
     },
     {
-      "text": "Add Register component",
-      "day": "Wednesday",
-      "reminder": false,
-      "id": 8
-    },
-    {
       "text": "Add validation for email and password",
       "day": "Wednesday",
       "reminder": false,
       "id": 9
+    },
+    {
+      "text": "Add error handling when no server connection etc.",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 10
+    },
+    {
+      "text": "Add Date&Time validation",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 11
+    },
+    {
+      "text": "Display current user name",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 12
+    },
+    {
+      "text": "Add Logout component",
+      "day": "Wednesday",
+      "reminder": false,
+      "id": 13
     }
   ],
   "users": [
     {
       "id": 1,
+      "name": "Alan",
       "email": "email1@example.com",
       "password": "Password1"
     },
     {
       "id": 2,
+      "name": "Boris",
       "email": "email2@example.com",
       "password": "Password2"
+    },
+    {
+      "name": "Esreal",
+      "email": "esreal@example.com",
+      "password": "Esreal1",
+      "id": 5
+    },
+    {
+      "name": "Fatima",
+      "email": "fatima@example.com",
+      "password": "DfX4.6MAii6tvaT",
+      "id": 6
+    },
+    {
+      "name": "Gregory",
+      "email": "gregory@example.com",
+      "password": "2RRa.ry2SfXUd2H",
+      "id": 7
+    },
+    {
+      "name": "Helena",
+      "email": "helena@example.com",
+      "password": "Helena1",
+      "id": 8
+    },
+    {
+      "name": "Jackob",
+      "email": "jackob@example.com",
+      "password": "RkFWdgvqdv@d9S6",
+      "id": 9
     }
   ]
 }
