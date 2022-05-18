@@ -1,9 +1,22 @@
 import { useState } from "react"
+import TextField from '@mui/material/TextField';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { uk } from 'date-fns/locale/'
+import Button from "./Button";
+
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState('')
-  const [day, setDay] = useState('')
-  const [reminder, setReminder] = useState(false)
+  const [reminder, setReminder] = useState(false);
+  const [dayTime, setDayTime] = useState('');
+
+  const onToday = (e) => {
+    e.preventDefault();
+    setDayTime(new Date())
+    console.log(dayTime)
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -11,21 +24,27 @@ const AddTask = ({ onAdd }) => {
       alert('Please add task description');
       return
     }
-    onAdd({ text, day, reminder })
+    onAdd({ text, dayTime, reminder })
     setText('')
-    setDay('')
+    setDayTime('')
     setReminder(false)
   }
-  
+
   return (
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
         <label>Task</label>
-        <input type='text' placeholder='Add Task' value={text} onChange={(e) => { setText(e.target.value) }} />
+        <TextField autoComplete="off" placeholder='Add Task' value={text} onChange={(e) => { setText(e.target.value) }} />
       </div>
       <div className='form-control'>
         <label>Day & Time</label>
-        <input type='text' placeholder='Set Date & Time' value={day} onChange={(e) => { setDay(e.target.value) }} />
+        <div className="date-time">
+          <LocalizationProvider locale={uk} dateAdapter={AdapterDateFns}>
+            <DateTimePicker renderInput={(props) => <TextField autoComplete="off" {...props} />}
+              value={dayTime} onChange={(newValue) => { setDayTime(newValue); }} />
+            <Button className="btn" color='cornflowerblue' text="Today" onClick={onToday} />
+          </LocalizationProvider>
+        </div>
       </div>
       <div className='form-control form-control-check'>
         <label>Reminder</label>

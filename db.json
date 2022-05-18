@@ -2,45 +2,51 @@
   "tasks": [
     {
       "text": "Come up with the idea of application to build using React",
-      "day": "Thursday",
+      "dayTime": "Thursday",
       "reminder": true,
       "id": 6
     },
     {
       "text": "Connect users with tasks. Display only current user's tasks",
-      "day": "Wednesday",
+      "dayTime": "Wednesday",
       "reminder": false,
       "id": 7
     },
     {
       "text": "Add validation for email and password",
-      "day": "Wednesday",
+      "dayTime": "Wednesday",
       "reminder": false,
       "id": 9
     },
     {
       "text": "Add error handling when no server connection etc.",
-      "day": "Wednesday",
+      "dayTime": "Wednesday",
       "reminder": false,
       "id": 10
     },
     {
-      "text": "Add Date&Time validation",
-      "day": "Wednesday",
-      "reminder": false,
-      "id": 11
-    },
-    {
       "text": "Display current user name",
-      "day": "Wednesday",
+      "dayTime": "Wednesday",
       "reminder": false,
       "id": 12
     },
     {
       "text": "Add Logout component",
-      "day": "Wednesday",
+      "dayTime": "Wednesday",
       "reminder": false,
       "id": 13
+    },
+    {
+      "text": "Change inputs in Login and Register components to TextFields",
+      "dayTime": "2022-05-19T13:00:04.000Z",
+      "reminder": false,
+      "id": 14
+    },
+    {
+      "text": "Remove red border around Day & Time field when addTask is opened",
+      "dayTime": "2022-05-19T17:00:00.000Z",
+      "reminder": false,
+      "id": 15
     }
   ],
   "users": [
